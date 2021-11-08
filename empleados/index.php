@@ -59,7 +59,7 @@ if (isset($_GET["borrarempleado"])){
     else{  echo json_encode(["success"=>0]); }
 }
 // Consulta todos los registros de la tabla
-$sqlEmpleaados = mysqli_query($conexionBD,"SELECT empleados.clave, empleados.nombre, puestos.puesto, puestos.sueldo FROM empleados, puestos WHERE empleados.cla_puesto = puestos.cla_puesto ");
+$sqlEmpleaados = mysqli_query($conexionBD,"SELECT empleados.clave, empleados.nombre, puestos.puesto, puestos.sueldo FROM empleados, puestos WHERE empleados.cla_puesto = puestos.cla_puesto");
 if(mysqli_num_rows($sqlEmpleaados) > 0){
     $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
     echo json_encode($empleaados);
